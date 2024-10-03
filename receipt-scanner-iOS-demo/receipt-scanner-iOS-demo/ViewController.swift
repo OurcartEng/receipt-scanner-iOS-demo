@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         // Initialize ReceiptScannerController with required parameters
         let scannerVC = ReceiptScannerController(
             isProd: false,
-            apiKey: "R1Y0hJsed24d87VwfubgTaA9rdhXxXRJwnJnTYaa",
+            apiKey: "YOUR_API_KEY",
             clientCountry: "US",
             clientCode: "ME",
             clientUserID: "abc123",

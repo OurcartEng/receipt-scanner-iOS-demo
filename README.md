@@ -35,7 +35,7 @@ class YourViewController: UIViewController, ReceiptScannerControllerDelegate {
         // Initialize ReceiptScannerController with required parameters
         let scannerVC = ReceiptScannerController(
             isProd: false,
-            apiKey: "R1Y0hJsed24d87VwfubgTaA9rdhXxXRJwnJnTYaa",
+            apiKey: "YOUR_API_KEY",
             clientCountry: "US",
             clientCode: "ME",
             clientUserID: "cab123"
@@ -145,7 +145,7 @@ Input for `ReceiptScanner` constructor:
   ```swift
       let scannerVC = ReceiptScannerController(
           isProd: false,
-          apiKey: "R1Y0hJsed24d87VwfubgTaA9rdhXxXRJwnJnTYaa",
+          apiKey: "YOUR_API_KEY",
           clientCountry: "US",
           clientCode: "ME",
           clientUserID: "cab123",
@@ -158,7 +158,7 @@ Input for `ReceiptScanner` constructor:
   ```swift
       let scannerVC = ReceiptScannerController(
           isProd: false,
-          apiKey: "R1Y0hJsed24d87VwfubgTaA9rdhXxXRJwnJnTYaa",
+          apiKey: "YOUR_API_KEY",
           clientCountry: "US",
           clientCode: "ME",
           clientUserID: "cab123",
@@ -170,7 +170,7 @@ Input for `ReceiptScanner` constructor:
   ```swift
       let scannerVC = ReceiptScannerController(
           isProd: false,
-          apiKey: "R1Y0hJsed24d87VwfubgTaA9rdhXxXRJwnJnTYaa",
+          apiKey: "YOUR_API_KEY",
           clientCountry: "US",
           clientCode: "ME",
           clientUserID: "cab123",
@@ -182,7 +182,7 @@ Input for `ReceiptScanner` constructor:
   ```swift
       let scannerVC = ReceiptScannerController(
           isProd: false,
-          apiKey: "R1Y0hJsed24d87VwfubgTaA9rdhXxXRJwnJnTYaa",
+          apiKey: "YOUR_API_KEY",
           clientCountry: "US",
           clientCode: "ME",
           clientUserID: "cab123",
@@ -206,7 +206,7 @@ Input for `ReceiptScanner` constructor:
         
         let scannerVC = ReceiptScannerController(
             isProd: false,
-            apiKey: "R1Y0hJsed24d87VwfubgTaA9rdhXxXRJwnJnTYaa",
+            apiKey: "YOUR_API_KEY",
             clientCountry: "US",
             clientCode: "ME",
             clientUserID: "cab123",
@@ -223,7 +223,7 @@ Lets set some random colors
 ```swift
     let scannerVC = ReceiptScannerController(
         isProd: false,
-        apiKey: "R1Y0hJsed24d87VwfubgTaA9rdhXxXRJwnJnTYaa",
+        apiKey: "YOUR_API_KEY",
         clientCountry: "US",
         clientCode: "ME",
         clientUserID: "cab123",
@@ -247,7 +247,7 @@ Example:
 ```swift
     let scannerVC = ReceiptScannerController(
         isProd: false,
-        apiKey: "R1Y0hJsed24d87VwfubgTaA9rdhXxXRJwnJnTYaa",
+        apiKey: "YOUR_API_KEY",
         clientCountry: "US",
         clientCode: "ME",
         clientUserID: "cab123",
