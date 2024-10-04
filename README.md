@@ -36,8 +36,8 @@ class YourViewController: UIViewController, ReceiptScannerControllerDelegate {
         let scannerVC = ReceiptScannerController(
             isProd: false,
             apiKey: "YOUR_API_KEY",
-            clientCountry: "US",
-            clientCode: "ME",
+            clientCountry: "DE",
+            clientCode: "DC",
             clientUserID: "cab123"
         )
         
@@ -91,7 +91,7 @@ Input for `ReceiptScanner` constructor:
     - **apiKey** (_String_) - string for Ourcart requests, must match country, environment, and clientCode, provided to you by Ourcart
     - **clientCountry** (_String_) - country code for Ourcart requests, provided to you by Ourcart
     - **clientCode** (_String_) - client code for Ourcart requests, provided to you by Ourcart
-    - **clientUserId** (_String_) - id of client to be sended and associated with receipts, it can be any string but have it be a real string associated with currently logged in user, it will help us block fraudulent users and will provide consistent data.
+    - **clientUserId** (_String_) - id of client to be sent and associated with receipts, it can be any string but have it be a real string associated with currently logged in user, it will help us block fraudulent users and will provide consistent data.
   
   #### Arguments(_not required_):
     - **primaryColor** (_UICOLOR_) - color(default: #92C91F) of links, action buttons, and many ornaments, should be the main color of the company
@@ -146,8 +146,8 @@ Input for `ReceiptScanner` constructor:
       let scannerVC = ReceiptScannerController(
           isProd: false,
           apiKey: "YOUR_API_KEY",
-          clientCountry: "US",
-          clientCode: "ME",
+          clientCountry: "DE",
+          clientCode: "DC",
           clientUserID: "cab123",
           initialScreenHeading: "Welcome to the documentation"
       )
