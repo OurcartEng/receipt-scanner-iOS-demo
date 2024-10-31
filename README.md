@@ -241,7 +241,7 @@ The result is:
 ... beautiful.
 
 ## Customization of font:
-Same as color you can overwrite font by adding “`fontFamily`” to styles, default font is `Poppins`.
+Same as color you can overwrite font by adding “`fontFamily`” to styles, default font is `Poppins`. Please keep in mind here, that you need to have two versions of fonts on your Project. The naming convention is as follow: YourFont-Regular.ttf and YourFont-Bold.ttf
 
 Example:
 ```swift
