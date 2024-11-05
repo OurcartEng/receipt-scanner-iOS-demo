@@ -2,7 +2,7 @@
 
 ## Installation
   ### Swift Package Manager:
-- #### Add the following URL: https://github.com/OurcartEng/receipt-scanner-iOS-library (access key needed to use package. Please contact [Ourcart](https://www.ourcart.com/contact))
+- #### Add the following URL: https://github.com/OurcartEng/receipt-scanner-iOS-demo .
 
 ## Quickstart
 
