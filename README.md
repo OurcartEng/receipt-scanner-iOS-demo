@@ -1,21 +1,12 @@
 # receipt-scanner-iOS-demo
 
 ## Installation
-Under `library` folder you will find `receiptScannerLibrary.zip`, extract it and then follow these steps:
-
-- #### Select the target where you want to use the framework.
-- #### Go to your project’s Build Settings:
-  -    #### Select the target where you want to use the framework.
-  -    #### Go to the General tab.
-- #### Scroll down to the Frameworks, Libraries, and Embedded Content section.
-- #### Click the + button, select the .xcframework, and press Add.
-- #### In the General tab under Frameworks, Libraries, and Embedded Content, for the added framework, set Embed to Embed & Sign.
-- #### In the Info.plist, add the NSCameraUsageDescription key and set the appropriate value in which you have to inform the user of the reason to allow the camera permission.
-- #### Make sure that your view controller conforms to the ReceiptScannerControllerDelegate protocol:
+  ### Swift Package Manager:
+- #### Add the following URL: https://github.com/OurcartEng/receipt-scanner-iOS-library (access key needed to use package. Please contact [Ourcart](https://www.ourcart.com/contact))
 
 ## Quickstart
 
-### Once you’ve added and linked the xcframework, you can start using it in your project files.
+### Once you’ve added and linked the SDK, you can start using it in your project files.
 - #### Import your framework like this:
 
 ```swift
