@@ -87,7 +87,7 @@ Parameters for `ReceiptScanner` constructor:
     - **clientUserId** (_String_) - id of client to be sent and associated with receipts, it can be any string but have it be a real string associated with currently logged in user, it will help us block fraudulent users and will provide consistent data.
   
   #### Arguments(_not required_):
-    - **primaryColor** (__Boolean_) - color of links, action buttons, and many ornaments, should be the main color of the company
+    - **primaryColor** (_UICOLOR_) - color of links, action buttons, and many ornaments, should be the main color of the company
     - **textColor** (_UICOLOR_) - color(default: #333333) of almost all texts
     - **primaryBackgroundColor** (_UICOLOR_) - background color(default: #F9F9F9) of main app actions
     - **secondaryBackgroundColor** (_UICOLOR_) - color(default: #ffffff) action bars and modals
