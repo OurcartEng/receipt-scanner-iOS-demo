@@ -92,7 +92,7 @@ Parameters for `ReceiptScanner` constructor:
     - **primaryBackgroundColor** (_UICOLOR_) - background color(default: #F9F9F9) of main app actions
     - **secondaryBackgroundColor** (_UICOLOR_) - color(default: #ffffff) action bars and modals
     - **backgroundPopupColor** (_UICOLOR_) - color(default: #ffffff) modals background
-    - **preValidation** (__Boolean_) - By default after user sends receipt there will be waiting time to check the result of transcription and present user with potential validation error. If you want to move user to the end screen without waiting for validation of receipt use this method to set flag to false. User will have manual review screen displayed.
+    - **preValidation** (_Boolean_) - By default after user sends receipt there will be waiting time to check the result of transcription and present user with potential validation error. If you want to move user to the end screen without waiting for validation of receipt use this method to set flag to false. User will have manual review screen displayed.
   
     - ### Primary button - buttons: Crop, Done, Continue to Upload, Next, Submit
     - **actionButtonTextColor** (_UICOLOR_) - color(default: #ffffff) change only if you dont want it to be "text color", color of text at the "tile buttons"
