@@ -167,7 +167,7 @@ Parameters for `ReceiptScanner` constructor:
             initialScreenHeading: "Welcome to the documentation"
       )
   ```
-  ![example_1](https://s3.amazonaws.com/ourcart.platform.assets/images/example1.jpg)
+  ![example_1](https://s3.amazonaws.com/ourcart.platform.assets/images/iOS_example_1.jpg)
 
 - #### Set up the `ReceiptScanner` with the initialScreenSubHeading param:
   ```swift
@@ -182,7 +182,7 @@ Parameters for `ReceiptScanner` constructor:
             initialScreenSubHeading: "Another documentation example, have a nice day\n lalala"
     )
   ```
-    ![example_2](https://s3.amazonaws.com/ourcart.platform.assets/images/example2.jpg)
+    ![example_2](https://s3.amazonaws.com/ourcart.platform.assets/images/iOS_example_1.jpg)
 - #### Set up the `ReceiptScanner` with the finalScreenHeading param:
   ```swift
       ReceiptScannerLauncher.launch(
@@ -196,7 +196,7 @@ Parameters for `ReceiptScanner` constructor:
               finalScreenHeading: "Upload complete"
       )
   ```
-  ![example_3](https://s3.amazonaws.com/ourcart.platform.assets/images/example3.jpg)
+  ![example_3](https://s3.amazonaws.com/ourcart.platform.assets/images/iOS_example_1.jpg)
 - #### Set up the `ReceiptScanner` with the finalScreenSubHeading param:
   ```swift
       ReceiptScannerLauncher.launch(
@@ -210,7 +210,7 @@ Parameters for `ReceiptScanner` constructor:
               finalScreenSubHeading: "You\'ll be notified once your\nreceipt is verified."
       )
   ```
-  ![example_4](https://s3.amazonaws.com/ourcart.platform.assets/images/example4.jpg)
+  ![example_4](https://s3.amazonaws.com/ourcart.platform.assets/images/iOS_example_1.jpg)
 - #### Set up the `ReceiptScanner` with the tutorialImages and tutorialTexts params(Important: They need to have the same length):
   ```swift
       let tutorialImages: [UIImage] = [
