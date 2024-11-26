@@ -87,11 +87,12 @@ Parameters for `ReceiptScanner` constructor:
     - **clientUserId** (_String_) - id of client to be sent and associated with receipts, it can be any string but have it be a real string associated with currently logged in user, it will help us block fraudulent users and will provide consistent data.
   
   #### Arguments(_not required_):
-    - **primaryColor** (_Boolean_) - By default after user sends receipt there will be waiting time to check the result of transcription and present user with potential validation error. If you want to move user to the end screen without waiting for validation of receipt use this method to set flag to false. User will have manual review screen displayed.
+    - **primaryColor** (__Boolean_) - color of links, action buttons, and many ornaments, should be the main color of the company
     - **textColor** (_UICOLOR_) - color(default: #333333) of almost all texts
     - **primaryBackgroundColor** (_UICOLOR_) - background color(default: #F9F9F9) of main app actions
     - **secondaryBackgroundColor** (_UICOLOR_) - color(default: #ffffff) action bars and modals
     - **backgroundPopupColor** (_UICOLOR_) - color(default: #ffffff) modals background
+    - **preValidation** (__Boolean_) - By default after user sends receipt there will be waiting time to check the result of transcription and present user with potential validation error. If you want to move user to the end screen without waiting for validation of receipt use this method to set flag to false. User will have manual review screen displayed.
   
     - ### Primary button - buttons: Crop, Done, Continue to Upload, Next, Submit
     - **actionButtonTextColor** (_UICOLOR_) - color(default: #ffffff) change only if you dont want it to be "text color", color of text at the "tile buttons"
@@ -343,6 +344,8 @@ The SDK uses a built-in Localizable.strings file with keys such as:
 <string name="OURCART_tutorial_6" formatted="false">We support common \n<b>image formats:</b> \nPDF, JPG, JPEG, PNG, GIF.</string>
 <string name="OURCART_tutorial_7" formatted="false">If your receipt is digital,\n please make sure to\n <b>download it first</b> to your\n device, and then upload.</string>
 ```
+
+To override those, please create your own Localizable.strings with specified keys. 
 
 ### Placement of most texts:
 ![readme_1](https://s3.amazonaws.com/ourcart.platform.assets/images/readme1.jpg)
