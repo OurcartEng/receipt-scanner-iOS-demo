@@ -277,13 +277,15 @@ Same as color you can overwrite font by adding “`fontFamily`” to styles, def
 
 Example:
 ```swift
-    let scannerVC = ReceiptScannerController(
-        isProd: false,
-        apiKey: "YOUR_API_KEY",
-        clientCountry: "US",
-        clientCode: "ME",
-        clientUserID: "cab123",
-        fontFamily: "Arial"
+    ReceiptScannerLauncher.launch(
+            from: self,
+            delegate: self,
+            isProd: false,
+            apiKey: "YOUR_API_KEY",
+            clientCountry: "DE",
+            clientCode: "DC",
+            clientUserID: "cab123",
+            fontFamily: "Arial"
     )
 ```
 
