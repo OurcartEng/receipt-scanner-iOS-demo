@@ -24,15 +24,17 @@ class YourViewController: UIViewController, ReceiptScannerControllerDelegate {
 
     @IBAction func openCameraTapped(_ sender: UIButton) {
         // Initialize ReceiptScannerController with required parameters
-        ReceiptScannerLauncher.launch(
-            from: self,
-            delegate: self,c
+        let scannerVC = ReceiptScannerController(
             isProd: false,
             apiKey: "YOUR_API_KEY",
             clientCountry: "DE",
             clientCode: "DC",
-            clientUserID: "cab123"
+            clientUserID: "cab123",
         )
+        
+        scannerVC.modalPresentationStyle = .fullScreen
+        scannerVC.delegate = self
+        present(scannerVC, animated: true)
     }
     
     func didViewReceiptUploadPage() {
@@ -151,59 +153,67 @@ Parameters for `ReceiptScanner` constructor:
 ## Example:
 - #### Set up the `ReceiptScanner` with the initialScreenHeading param:
   ```swift
-      ReceiptScannerLauncher.launch(
-            from: self,
-            delegate: self,
+      let scannerVC = ReceiptScannerController(
             isProd: false,
             apiKey: "YOUR_API_KEY",
             clientCountry: "DE",
             clientCode: "DC",
             clientUserID: "cab123",
             initialScreenHeading: "Welcome to the documentation"
-      )
+        )
+        
+        scannerVC.modalPresentationStyle = .fullScreen
+        scannerVC.delegate = self
+        present(scannerVC, animated: true)
   ```
   ![example_1](https://s3.amazonaws.com/ourcart.platform.assets/images/iOS_example_1.jpg)
 
 - #### Set up the `ReceiptScanner` with the initialScreenSubHeading param:
   ```swift
-    ReceiptScannerLauncher.launch(
-            from: self,
-            delegate: self,
+      let scannerVC = ReceiptScannerController(
             isProd: false,
             apiKey: "YOUR_API_KEY",
             clientCountry: "DE",
             clientCode: "DC",
             clientUserID: "cab123",
             initialScreenSubHeading: "Another documentation example, have a nice day\n lalala"
-    )
+        )
+        
+        scannerVC.modalPresentationStyle = .fullScreen
+        scannerVC.delegate = self
+        present(scannerVC, animated: true)
   ```
     ![example_2](https://s3.amazonaws.com/ourcart.platform.assets/images/iOS_example_1.jpg)
 - #### Set up the `ReceiptScanner` with the finalScreenHeading param:
   ```swift
-      ReceiptScannerLauncher.launch(
-              from: self,
-              delegate: self,
-              isProd: false,
-              apiKey: "YOUR_API_KEY",
-              clientCountry: "DE",
-              clientCode: "DC",
-              clientUserID: "cab123",
-              finalScreenHeading: "Upload complete"
-      )
+        let scannerVC = ReceiptScannerController(
+            isProd: false,
+            apiKey: "YOUR_API_KEY",
+            clientCountry: "DE",
+            clientCode: "DC",
+            clientUserID: "cab123",
+            finalScreenHeading: "Upload complete"
+        )
+        
+        scannerVC.modalPresentationStyle = .fullScreen
+        scannerVC.delegate = self
+        present(scannerVC, animated: true)
   ```
   ![example_3](https://s3.amazonaws.com/ourcart.platform.assets/images/iOS_example_1.jpg)
 - #### Set up the `ReceiptScanner` with the finalScreenSubHeading param:
   ```swift
-      ReceiptScannerLauncher.launch(
-              from: self,
-              delegate: self,
-              isProd: false,
-              apiKey: "YOUR_API_KEY",
-              clientCountry: "DE",
-              clientCode: "DC",
-              clientUserID: "cab123",
-              finalScreenSubHeading: "You\'ll be notified once your\nreceipt is verified."
-      )
+        let scannerVC = ReceiptScannerController(
+            isProd: false,
+            apiKey: "YOUR_API_KEY",
+            clientCountry: "DE",
+            clientCode: "DC",
+            clientUserID: "cab123",
+            finalScreenSubHeading: "You\'ll be notified once your\nreceipt is verified."
+        )
+        
+        scannerVC.modalPresentationStyle = .fullScreen
+        scannerVC.delegate = self
+        present(scannerVC, animated: true)
   ```
   ![example_4](https://s3.amazonaws.com/ourcart.platform.assets/images/iOS_example_1.jpg)
 - #### Set up the `ReceiptScanner` with the tutorialImages and tutorialTexts params(Important: They need to have the same length):
@@ -219,10 +229,8 @@ Parameters for `ReceiptScanner` constructor:
             (text: "Snap with minimal\n background, align receipt\n borders to the camera frame.", boldParts: ["minimal\n background"]),
             (text: "Snap a clear picture in\n good lighting. Make sure it is\n not blurry or dark.", boldParts: ["good lighting"]),
       ]
-    
-      ReceiptScannerLauncher.launch(
-            from: self,
-            delegate: self,
+
+        let scannerVC = ReceiptScannerController(
             isProd: false,
             apiKey: "YOUR_API_KEY",
             clientCountry: "DE",
@@ -230,7 +238,11 @@ Parameters for `ReceiptScanner` constructor:
             clientUserID: "cab123",
             tutorialImages: tutorialImages,
             tutorialTexts: tutorialTexts
-      )
+        )
+        
+        scannerVC.modalPresentationStyle = .fullScreen
+        scannerVC.delegate = self
+        present(scannerVC, animated: true)
   ```
 
 ## Customization of colors:
@@ -239,14 +251,13 @@ Receipt scanner allows you to set colors of its views by overwriting default val
 Example:  
 Lets set some random colors
 ```swift
-        ReceiptScannerLauncher.launch(
-            from: self,
-            delegate: self,
+        let scannerVC = ReceiptScannerController(
             isProd: false,
             apiKey: "YOUR_API_KEY",
             clientCountry: "DE",
             clientCode: "DC",
             clientUserID: "cab123",
+            preValidation: false,
             primaryColor: UIColor(red: 242/255, green: 183/255, blue: 0/255, alpha: 1.0),
             textColor:  UIColor(red: 250/255, green: 3/255, blue: 87/255, alpha: 1.0),
             primaryBackgroundColor: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0),
@@ -262,8 +273,14 @@ Lets set some random colors
             
             tileButtonBackgroundColor: UIColor(red: 242/255, green: 183/255, blue: 0/255, alpha: 1.0),
             tileButtonIconColor: UIColor(red: 86/255, green: 36/255, blue: 111/255, alpha: 1.0),
-            tileButtonTextColor: UIColor(red: 0/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            tileButtonTextColor: UIColor(red: 0/255, green: 255/255, blue: 255/255, alpha: 1.0),
+            finalScreenHeading: "Upload comlpeted",
+            finalScreenSubHeading: "Your receipt has been uploaded successfully"
         )
+        
+        scannerVC.modalPresentationStyle = .fullScreen
+        scannerVC.delegate = self
+        present(scannerVC, animated: true)
 ```
 
 The result is:
@@ -277,16 +294,18 @@ Same as color you can overwrite font by adding “`fontFamily`” to styles, def
 
 Example:
 ```swift
-    ReceiptScannerLauncher.launch(
-            from: self,
-            delegate: self,
+        let scannerVC = ReceiptScannerController(
             isProd: false,
             apiKey: "YOUR_API_KEY",
             clientCountry: "DE",
             clientCode: "DC",
             clientUserID: "cab123",
             fontFamily: "Arial"
-    )
+        )
+        
+        scannerVC.modalPresentationStyle = .fullScreen
+        scannerVC.delegate = self
+        present(scannerVC, animated: true)
 ```
 
 Please add the font to your Info.plist and include that into your project.
