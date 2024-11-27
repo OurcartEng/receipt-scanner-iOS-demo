@@ -33,11 +33,6 @@ class YourViewController: UIViewController, ReceiptScannerControllerDelegate {
             clientCode: "DC",
             clientUserID: "cab123"
         )
-        
-        // Present the scanner
-        scannerVC.modalPresentationStyle = .fullScreen
-        scannerVC.delegate = self
-        present(scannerVC, animated: true)
     }
     
     func didViewReceiptUploadPage() {
