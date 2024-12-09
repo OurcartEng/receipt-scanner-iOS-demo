@@ -312,56 +312,7 @@ Please add the font to your Info.plist and include that into your project.
 
 ## Customization of text:
 
-The SDK uses a built-in Localizable.strings file with keys such as:
-
-```xml
-<string name="OURCART_adjust_angle">The angle is incorrect. Hold your camera directly above the receipt.</string>
-<string name="OURCART_FLAW_GENERIC">Some details couldn\'t be recognized. Please ensure the entire receipt is visible and clear.</string>
-<string name="OURCART_SENDING_ERROR">Something went wrong. Please try again later.</string>
-<string name="OURCART_PROCESSING_ERROR">Something went wrong. Please try again later.</string>
-<string name="OURCART_DIMENSION_RATIO_ERROR">The receipt is too long. Please click Retake, choose Long Receipt, zoom in, and capture it in up to 6 parts.</string>
-<string name="OURCART_looking_for_receipts">Looking for receipt...</string>
-<string name="OURCART_AUTO_MANUAL_ON">No receipt found.\n Capture manually.</string>
-<string name="OURCART_HOLD_STEADY">Hold your camera steady,\n we are capturing...</string>
-<string name="OURCART_AUTO_CAPTURE_ON">Auto-capture is on</string>
-<string name="OURCART_AUTO_CAPTURE_OFF">Auto-capture is off</string>
-<string name="OURCART_REGULAR_RECEIPT_MODE">Regular receipt mode</string>
-<string name="OURCART_LONG_RECEIPT_MODE">Long receipt mode</string>
-<string name="OURCART_upload_pick_text" formatted="false">If your receipt is digital, please make sure to <b>download it first</b> to your device, and then upload.</string>
-<string name="OURCART_upload_pick_upload">Continue to upload</string>
-<string name="OURCART_upload_pick_upload_later"><u>I\'ll upload later</u></string>
-<string name="OURCART_upload_pick_gallery">Gallery</string>
-<string name="OURCART_upload_pick_document">Document</string>
-<string name="OURCART_regular_receipt">Regular Receipt</string>
-<string name="OURCART_long_receipt">Long Receipt</string>
-<string name="OURCART_submit">Submit</string>
-<string name="OURCART_back"><u>Back</u></string>
-<string name="OURCART_retake"><u>Retake</u></string>
-<string name="OURCART_retake_all"><u>Retake all</u></string>
-<string name="OURCART_close">Close</string>
-<string name="OURCART_crop">Crop</string>
-<string name="OURCART_next">Next</string>
-<string name="OURCART_done">Done</string>
-<string name="OURCART_upload_receipt">Upload Receipt</string>
-<string name="OURCART_snap_receipt">Snap a Receipt</string>
-<string name="OURCART_init_page_bottom">For more info open</string>
-<string name="OURCART_tutorial"><u>Tutorial</u></string>
-<string name="OURCART_initial_screen_heading">Receipt upload</string>
-<string name="OURCART_initial_screen_sub_heading" formatted="false">Snap your paper <b>receipt or upload</b> \ndigital receipt file.</string>
-<string name="OURCART_final_screen_heading">Upload complete</string>
-<string name="OURCART_final_screen_sub_heading">You\'ll be notified once your\nreceipt is verified.</string>
-<string name="OURCART_final_screen_manual_review_heading">Upload complete</string>
-<string name="OURCART_final_screen_manual_review_sub_heading" formatted="false">We couldn\'t process your\n receipt automatically.\nIt will now go to <b>manual review,\n</b> which may take <b>up to 48 hours.</b></string>
-<string name="OURCART_tutorial_1" formatted="false">The image should be \nclearly readable and \n<b>include all the information</b> \non the receipt.</string>
-<string name="OURCART_tutorial_2" formatted="false">Snap with <b>minimal \nbackground</b>, align receipt \nborders to the camera frame.</string>
-<string name="OURCART_tutorial_3" formatted="false">Snap a clear picture in \n<b>good lighting</b>. Make sure it is\n not blurry or dark</string>
-<string name="OURCART_tutorial_4" formatted="false">The receipt should be clear\n and <b>free of wrinkles</b>.</string>
-<string name="OURCART_tutorial_5" formatted="false">Please <b>do not write</b> \non the receipt.</string>
-<string name="OURCART_tutorial_6" formatted="false">We support common \n<b>image formats:</b> \nPDF, JPG, JPEG, PNG, GIF.</string>
-<string name="OURCART_tutorial_7" formatted="false">If your receipt is digital,\n please make sure to\n <b>download it first</b> to your\n device, and then upload.</string>
-```
-
-To override those, please create your own Localizable.strings with specified keys. 
+The SDK uses a built-in Localizable.strings file with keys as below.To override those, please create your own Localizable.strings with specified keys. 
 
 ### Placement of most texts:
 ![readme_1](https://s3.amazonaws.com/ourcart.platform.assets/images/readme1.jpg)
