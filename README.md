@@ -312,7 +312,9 @@ Please add the font to your Info.plist and include that into your project.
 
 ## Customization of text:
 
-The SDK uses a built-in Localizable.strings file with keys as below.To override those, please create your own Localizable.strings with specified keys. 
+The SDK uses a built-in Localizable.strings file with keys as below.To override those, please create your own Localizable.strings with specified keys.
+
+In case you want to have bold words inside paragraph, do it like this: "OURCART_final_screen_manual_review_sub_heading": "We couldn't process your receipt automatically.It will now go to <b>manual review</b>, which may take<b> up to 48 hours.</b>"
 
 ### Placement of most texts:
 ![readme_1](https://s3.amazonaws.com/ourcart.platform.assets/images/readme1.jpg)
