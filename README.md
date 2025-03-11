@@ -196,22 +196,6 @@ Implement these methods in your `UIViewController`:
 ## Customization of font:
 Please keep in mind here, that you need to have two versions of fonts on your Project. The naming convention is as follow: YourFont-Regular.ttf and YourFont-Bold.ttf. Default font is `Poppins`
 
-Example:
-```swift
-        let scannerVC = ReceiptScannerController(
-            isProd: false,
-            apiKey: "YOUR_API_KEY",
-            clientCountry: "DE",
-            clientCode: "DC",
-            clientUserID: "cab123",
-            fontFamily: "Arial"
-        )
-        
-        scannerVC.modalPresentationStyle = .fullScreen
-        scannerVC.delegate = self
-        present(scannerVC, animated: true)
-```
-
 Please add the font to your Info.plist and include that into your project.
 
 ## Customization of text:
