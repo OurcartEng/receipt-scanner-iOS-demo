@@ -20,6 +20,7 @@ The Ourcart SDK provides a complete toolkit for seamless receipt capture and pro
  - Integration with Ourcart's backend processing
 
 Clip showing the capabilities of the camera component:
+
 https://github.com/user-attachments/assets/9b4b5e45-5c6c-4159-951f-d4666406cb4c
 
 
