@@ -193,6 +193,58 @@ Implement these methods in your `UIViewController`:
       }
   }
 
+## ✂️Edge Detection & Cropping
+
+`ReceiptScanner` provides powerful edge detection and cropping functionalities to help process receipts efficiently.
+
+---
+
+### 🖼️ `getEdgePointsData`
+
+This method processes a single image and returns `EdgeData`, containing the detected edges of the receipt.
+
+#### 📥 Input:
+- `image (UIImage)` - The receipt image to analyze.
+
+#### 📤 Output:
+- `Quadrilateral?` - The detected edges of the receipt in the following order:
+  1. **Top-left**
+  2. **Top-right**
+  3. **Bottom-left**
+  4. **Bottom-right**
+
+- If no receipt is detected, `nil` is returned.
+
+#### ✅ Usage Example:
+```swift
+if let detectedQuad = ReceiptScanner.getEdgePointsData(image) {
+    print("Detected edges: \(detectedQuad)")
+} else {
+    print("No receipt detected.")
+}
+```
+
+### ✂️ `cropImage`
+
+This method crops a given image using the detected receipt edges.
+
+#### 📥 Input:
+- `image (UIImage)` - The original image to crop.
+- `quad (Quadrilateral)` - The detected edges of the receipt.
+
+#### 📤 Output:
+- `UIImage?` - The cropped receipt image, or `nil` if the cropping fails.
+
+#### ✅ Usage Example:
+```swift
+if let croppedImage = ReceiptScanner.cropImage(image, quad: detectedQuad) {
+    print("Cropped image successfully!")
+} else {
+    print("Failed to crop image.")
+}
+```
+
+
 ## Customization of font:
 Please keep in mind here, that you need to have two versions of fonts on your Project. The naming convention is as follow: YourFont-Regular.ttf and YourFont-Bold.ttf. Default font is `Poppins`
 
@@ -200,7 +252,15 @@ Please add the font to your Info.plist and include that into your project.
 
 ## Customization of text:
 The SDK uses a built-in Localizable.strings file with keys as below.To override those, please create your own Localizable.strings with specified keys.
-
+```xml
+OURCART_adjust_angle: "The angle is incorrect. Hold your camera directly above the receipt."
+OURCART_long_receipt: "Long Receipt"
+OURCART_regular_receipt: "Regular Receipt"
+OURCART_HOLD_STEADY: "Hold your camera, we are capturing"
+OURCART_looking_for_receipts: "Looking for receipt"
+OURCART_next: "Next"
+OURCART_move_closer: "Move closer so receipt with be withing the frame"
+```
 In case you want to have bold words inside paragraph, do it like this: 
 ```xml
 "OURCART_final_screen_manual_review_sub_heading": "We couldn't process your receipt automatically.It will now go to <b>manual review</b>, which may take<b> up to 48 hours.</b>"
