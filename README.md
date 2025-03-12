@@ -1,5 +1,29 @@
 # receipt-scanner-iOS-demo
 
+## Concept
+The Ourcart SDK provides a complete toolkit for seamless receipt capture and processing. It helps users easily upload high-quality receipts to the Ourcart API through three core components:
+1. Camera Component (ReceiptScanner) - A visual interface with features to guide users in capturing quality receipt photos:
+ - Edge detection with visual feedback
+ - Real-time angle verification
+ - Auto-capture with manual override option
+ - Multi-snapshot support for long receipts (manual switching)
+ - Customizable UI elements
+ - Automatic toggle to manual scanning after a configurable delay
+2. Cropping Component (Edge Detection & Cropping) - A non-visual module for intelligent image processing:
+ - Automatic receipt detection in snapshots
+ - Corner point identification for precise cropping
+ - Support for long receipts where corners touch image edges
+ - Receipt straightening with adjusted ratio output
+3. Receipt API Component (ReceiptScannerUploader) - a non-visual module handling the backend communication:
+ - Image optimization (resizing and compression)
+ - Secure upload handling
+ - Integration with Ourcart's backend processing
+
+Clip showing the capabilities of the camera component:
+https://github.com/user-attachments/assets/9b4b5e45-5c6c-4159-951f-d4666406cb4c
+
+
+
 ## Installation
   ### Swift Package Manager:
 - #### Add the following URL: https://github.com/OurcartEng/receipt-scanner-iOS-demo .
