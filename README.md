@@ -99,7 +99,11 @@ Additional methods to customize scanner behavior:
 - **`setShowHelpIcon(_Bool_)`** – Enables or disables the help icon in the UI.
 - **`setShowCornerFrame(_Bool_)`** – Enables or disables the corner frame when detecting receipts.
 - **`setManualCaptureMode(_Bool_)`** – Enables or disables manual capture mode.
-
+- **`setCloseIcon(_ icon: UIImage)`** – Sets a custom icon for the close button.
+- **`setTorchOnIcon(_ icon: UIImage)`** – Sets a custom icon for the torch (flash) when it is on.
+- **`setTorchOffIcon(_ icon: UIImage)`** – Sets a custom icon for the torch (flash) when it is off.
+- **`setHelpIcon(_ icon: UIImage)`** – Sets a custom icon for the help button.
+- 
 #### 🎨 UI Customization
 
 ##### 📌 Switch Icons (Mode Buttons)
@@ -117,6 +121,8 @@ Additional methods to customize scanner behavior:
 - **`setShutterBtnColorManualCaptureMode(_UIColor_)`** – Color of the shutter button in manual mode.
 - **`setShutterBtnColorSpinningAnimationManualCaptureMode(_UIColor_)`** – Color of the spinning animation in manual mode.
 - **`setShutterBtnColorSpinningDuringCaptureManualCaptureMode(_UIColor_)`** – Color of the shutter button during capture in manual mode.
+- **`setShutterBtnIconManualCaptureMode(_ icon: UIImage)`** – Sets a custom icon for manual capture mode.
+- **`setShutterIconAutomaticCaptureMode(_ icon: UIImage)`** – Sets a custom icon for automatic capture mode.
 
 ##### ⏭️ Next Button
 - **`setNextBtnColor(_UIColor_)`** – Background color of the next button.
