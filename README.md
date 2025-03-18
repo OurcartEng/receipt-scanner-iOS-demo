@@ -46,6 +46,7 @@ import ReceiptScannerLibrary
             .setClientUserID("YOUR_CLIENT_USER_ID")  // Required
             .setShowCornerFrame(false)  // Optional
             .setNextBtnColor(.blue)  // Optional
+            // Add any other desired setter calls here
             .build()
     
         let scannerViewController = ImageScannerStandaloneController(settings: config)
@@ -60,7 +61,7 @@ import ReceiptScannerLibrary
     // MARK: - Delegate Methods
     
     func scannerController(_ scanner: ReceiptScannerLibrary.ImageScannerStandaloneController, didCompleteScanWith results: ReceiptScannerLibrary.ImageScannerStandaloneResults) {
-        let images = results
+        let images = results.images
         
         scanner.dismiss(animated: true)
     }
@@ -70,7 +71,7 @@ import ReceiptScannerLibrary
     }
     
     func scannerController(_ scanner: ReceiptScannerLibrary.ImageScannerStandaloneController, didEncounterError error: Error) {
-        //        
+        // Handle error if needed
     }
     
     func receiptScannerControllerDidTapOpenTutorial(_ scanner: ReceiptScannerLibrary.ImageScannerStandaloneController) {
@@ -99,16 +100,18 @@ Additional methods to customize scanner behavior:
 - **`setShowHelpIcon(_Bool_)`** – Enables or disables the help icon in the UI.
 - **`setShowCornerFrame(_Bool_)`** – Enables or disables the corner frame when detecting receipts.
 - **`setManualCaptureMode(_Bool_)`** – Enables or disables manual capture mode.
+- **`setRetakeCaptureMode(_Bool_)`** – Enables or disables retake capture mode(manual capture mode enabled by default).
 - **`setCloseIcon(_ icon: UIImage)`** – Sets a custom icon for the close button.
 - **`setTorchOnIcon(_ icon: UIImage)`** – Sets a custom icon for the torch (flash) when it is on.
 - **`setTorchOffIcon(_ icon: UIImage)`** – Sets a custom icon for the torch (flash) when it is off.
 - **`setHelpIcon(_ icon: UIImage)`** – Sets a custom icon for the help button.
-- 
+- **`setCornerFrameSwitchColor(_ color: UIColor)`** – Sets the color of the corner frame.
 #### 🎨 UI Customization
 
 ##### 📌 Switch Icons (Mode Buttons)
 - **`setSwitchIconsActiveModeBackgroundColor(_UIColor_)`** – Background color for active mode switch icon.
 - **`setSwitchIconsActiveModeFontColor(_UIColor_)`** – Font color for active mode switch icon.
+- **`setSwitchIconsInActiveModeFontColor(_UIColor_)`** – Font color for inactive mode switch icon.
 - **`setSwitchIconsInactiveModeBackgroundColor(_UIColor_)`** – Background color for inactive mode switch icon.
 - **`setSwitchIconsBackgroundColor(_UIColor_)`** – Background color for switch icons.
 - **`setSwitchIconsFonts(_String_)`** – Custom font for switch icons.
@@ -191,38 +194,81 @@ Implement these methods in your `UIViewController`:
 - **Upload a Single Image**  
   ✅ This method uploads a single receipt image to the backend.
   ```swift
-  ReceiptScannerUploader.sendImage(yourImage) { result in
-      switch result {
-      case .success(let url):
-          print("✅ Image uploaded successfully: \(url)")
-      case .failure(let error):
-          print("❌ Upload failed: \(error.localizedDescription)")
-      }
-  }
+              do {
+                  let config = try ReceiptScannerUploaderConfiguration(
+                      apiKey: "YOUR_API_KEY",
+                      clientCode: "YOUR_CLIENT_CODE",
+                      clientUserID: "YOUR_CLIENT_USER_ID",
+                      clientCountry: "YOUR_CLIENT_COUNTRY_CODE",
+                      isProd: false // Set to true for production environment
+                  )
+      
+                  ReceiptScannerUploader.configuration = config
+      
+                  ReceiptScannerUploader.sendImage(image, with: config) { result in
+                      switch result {
+                      case .success(let url):
+                          print("✅ Image uploaded successfully: \(url)")
+                      case .failure(let error):
+                          self.imagePreviewView.showError(message: "Upload of image failed: \(error.localizedDescription)")
+                      }
+                  }
+        
+                } catch {
+                    print("Configuration error: \(error.localizedDescription)")
+                }
 - **Upload Multiple Images**  
   ✅ This method uploads multiple receipt images to the backend.
   ```swift
-  let images = [image1, image2, image3]
-  ReceiptScannerUploader.sendMultipleImages(images) { result in
-       switch result {
-       case .success(let urls):
-         print("✅ Images uploaded successfully: \(urls)")
-       case .failure(let error):
-         print("❌ Upload failed: \(error.localizedDescription)")
-    }
-  }
+              do {
+                  let config = try ReceiptScannerUploaderConfiguration(
+                      apiKey: "YOUR_API_KEY",
+                      clientCode: "YOUR_CLIENT_CODE",
+                      clientUserID: "YOUR_CLIENT_USER_ID",
+                      clientCountry: "YOUR_CLIENT_COUNTRY_CODE",
+                      isProd: false // Set to true for production environment
+                  )
+      
+                  ReceiptScannerUploader.configuration = config
+      
+                  ReceiptScannerUploader.sendMultipleImages(images, with: config) { result in
+                      switch result {
+                      case .success(let urls):
+                          print("✅ Images uploaded successfully: \(urls)")
+                      case .failure(let error):
+                          self.imagePreviewView.showError(message: "Upload of images failed: \(error.localizedDescription)")
+                      }
+                  }
+        
+                } catch {
+                    print("Configuration error: \(error.localizedDescription)")
+                }
 - **Upload a PDF Receipt**  
   ✅ This method uploads a PDF receipt to the backend.
   ```swift
-  let pdfData = yourPDFData
-  ReceiptScannerUploader.sendPDF(pdfData) { result in
-      switch result {
-      case .success(let url):
-          print("✅ PDF uploaded successfully: \(url)")
-      case .failure(let error):
-          print("❌ Upload failed: \(error.localizedDescription)")
-      }
-  }
+              do {
+                  let config = try ReceiptScannerUploaderConfiguration(
+                      apiKey: "YOUR_API_KEY",
+                      clientCode: "YOUR_CLIENT_CODE",
+                      clientUserID: "YOUR_CLIENT_USER_ID",
+                      clientCountry: "YOUR_CLIENT_COUNTRY_CODE",
+                      isProd: false // Set to true for production environment
+                  )
+      
+                  ReceiptScannerUploader.configuration = config
+      
+                  ReceiptScannerUploader.sendPDF(pdf, with: config) { result in
+                      switch result {
+                      case .success(let urls):
+                          print("✅ PDF uploaded successfully: \(urls)")
+                      case .failure(let error):
+                          self.imagePreviewView.showError(message: "Upload of pdf failed: \(error.localizedDescription)")
+                      }
+                  }
+        
+                } catch {
+                    print("Configuration error: \(error.localizedDescription)")
+                }
 
 ## ✂️Edge Detection & Cropping
 
@@ -248,10 +294,8 @@ This method processes a single image and returns `EdgeData`, containing the dete
 
 #### ✅ Usage Example:
 ```swift
-if let detectedQuad = ReceiptScanner.getEdgePointsData(image) {
-    print("Detected edges: \(detectedQuad)")
-} else {
-    print("No receipt detected.")
+ImageScannerStandaloneController.getEdgePointsData(image: image) { quad in
+    print("✅ Detected crop points: \(quad ?? nil)")
 }
 ```
 
@@ -268,18 +312,22 @@ This method crops a given image using the detected receipt edges.
 
 #### ✅ Usage Example:
 ```swift
-if let croppedImage = ReceiptScanner.cropImage(image, quad: detectedQuad) {
-    print("Cropped image successfully!")
-} else {
-    print("Failed to crop image.")
+let croppedImage = ImageScannerStandaloneController.cropImage(using: quad, from: image) {
+     // Handle croppedImage
 }
 ```
 
 
 ## Customization of font:
-Please keep in mind here, that you need to have two versions of fonts on your Project. The naming convention is as follow: YourFont-Regular.ttf and YourFont-Bold.ttf. Default font is `Poppins`
 
-Please add the font to your Info.plist and include that into your project.
+Please add the font to your Info.plist and include that into your project.  Default font is `Poppins`
+
+#### ✅ Usage Example:
+```swift
+setSwitchIconsFonts("Fredoka-Regular")
+.....
+// other font related customization
+```
 
 ## Customization of text:
 The SDK uses a built-in Localizable.strings file with keys as below.To override those, please create your own Localizable.strings with specified keys.
@@ -290,7 +338,8 @@ OURCART_regular_receipt: "Regular Receipt"
 OURCART_HOLD_STEADY: "Hold your camera, we are capturing"
 OURCART_looking_for_receipts: "Looking for receipt"
 OURCART_next: "Next"
-OURCART_move_closer: "Move closer so receipt with be withing the frame"
+OURCART_AUTO_MANUAL_ON: "No receipt found. Capture manually."
+OURCART_receipt_out_of_rame: "Please position the receipt within the frame."
 ```
 In case you want to have bold words inside paragraph, do it like this: 
 ```xml
