@@ -106,6 +106,9 @@ Additional methods to customize scanner behavior:
 - **`setTorchOffIcon(_ icon: UIImage)`** – Sets a custom icon for the torch (flash) when it is off.
 - **`setHelpIcon(_ icon: UIImage)`** – Sets a custom icon for the help button.
 - **`setCornerFrameSwitchColor(_ color: UIColor)`** – Sets the color of the corner frame.
+- **`setRectangleDetectorColor(_ color: UIColor)`** – Sets the color of the rectangle detector.
+- **`setSwitchToManualModeTimer(_ time: TimeInterval)`** – Sets the time in seconds before switching to manual mode.
+
 #### 🎨 UI Customization
 
 ##### 📌 Switch Icons (Mode Buttons)
