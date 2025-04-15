@@ -41,7 +41,7 @@ import ReceiptScannerLibrary
         let config = try StandaloneScannerSettingsBuilder()
             .setIsProd(false) // Optional
             .setApiKey("YOUR_API_KEY")  // Required
-            .setClientCountry("YOUR_CLIENT_COUNTRY_CODE)  // Required
+            .setClientCountry("YOUR_CLIENT_COUNTRY_CODE")  // Required
             .setClientCode("YOUR_CLIENT_CODE")  // Required
             .setClientUserID("YOUR_CLIENT_USER_ID")  // Required
             .setShowCornerFrame(false)  // Optional
@@ -187,6 +187,42 @@ Implement these methods in your `UIViewController`:
           let tutorialVC = TutorialViewController()
           present(tutorialVC, animated: true)
   }
+- **`didTorchOnTapped()`**  
+  ✅ Called when the user taps on the torch icon.
+  ```swift
+    func didTorchOnTapped() {
+        print("Torch On Tapped")
+    }
+- **`didTorchOffTapped()`**  
+  ✅ Called when the user taps on the torch icon.
+  ```swift
+    func didTorchOffTapped() {
+        print("Torch Off Tapped")
+    }
+- **`didLongReceiptTapped()`**  
+  ✅ Called when the user switch to long receipt mode.
+  ```swift
+    func didTorchOffTapped() {
+         print("Long Receipt Tapped")
+    }
+- **`didRegularReceiptTapped()`**  
+  ✅ Called when the user switch to regular receipt mode.
+  ```swift
+    func didRegularReceiptTapped() {
+         print("Regular Receipt Tapped")
+    }
+- **`didLongReceiptCaptured()`**  
+  ✅ Called when the user captures a long receipt.
+  ```swift
+    func didLongReceiptCaptured() {
+         print("Long Receipt Captured")
+    }
+- **`didSwitchToManualMode()`**  
+  ✅ Called when the manual mode is activated.
+  ```swift
+    func didSwitchToManualMode() {
+         print("Switched to Manual Mode")
+    }
 
 ### 📤 ReceiptScannerUploader
 
@@ -338,6 +374,7 @@ The SDK uses a built-in Localizable.strings file with keys as below.To override 
 OURCART_adjust_angle: "The angle is incorrect. Hold your camera directly above the receipt."
 OURCART_long_receipt: "Long Receipt"
 OURCART_regular_receipt: "Regular Receipt"
+OURCART_regular_receipt_txt2: "Regular Receipt"
 OURCART_HOLD_STEADY: "Hold your camera, we are capturing"
 OURCART_looking_for_receipts: "Looking for receipt"
 OURCART_next: "Next"
@@ -348,3 +385,4 @@ In case you want to have bold words inside paragraph, do it like this:
 ```xml
 "OURCART_final_screen_manual_review_sub_heading": "We couldn't process your receipt automatically.It will now go to <b>manual review</b>, which may take<b> up to 48 hours.</b>"
 ```
+Explanation: the text OURCART_regular_receipt_txt2 is applied when switched to manual mode
