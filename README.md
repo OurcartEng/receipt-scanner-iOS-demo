@@ -75,7 +75,9 @@ import ReceiptScannerLibrary
     }
     
     func receiptScannerControllerDidTapOpenTutorial(_ scanner: ReceiptScannerLibrary.ImageScannerStandaloneController) {
-        scanner.dismiss(animated: true)
+        let viewController = YourViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        scanner.present(viewController, animated: true)
     }
 ```
 
@@ -182,10 +184,9 @@ Implement these methods in your `UIViewController`:
   _Use this method to navigate the user to the tutorial screen._
   ```swift
   func receiptScannerControllerDidTapOpenTutorial(_ scanner: ReceiptScannerLibrary.ImageScannerStandaloneController) {
-          scanner.dismiss(animated: true)
-  
-          let tutorialVC = TutorialViewController()
-          present(tutorialVC, animated: true)
+        let viewController = YourViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        scanner.present(viewController, animated: true)
   }
 - **`didTorchOnTapped()`**  
   ✅ Called when the user taps on the torch icon.
