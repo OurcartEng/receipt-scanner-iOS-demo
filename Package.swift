@@ -17,7 +17,7 @@ let package = Package(
         .binaryTarget(
             name: "ReceiptScannerLibrary",
             url: "https://sdk-library.s3.eu-central-1.amazonaws.com/iOS/1.0.6/ReceiptScannerLibrary.xcframework.zip",
-            checksum: "1a5cc77a26040fc8d1d023f5068a0628dd162f5c995b7c217a762664f1f8b16a"
+            checksum: "21077ec1ecd97485ef0f8fecbcabcafe38786fad8a9c04e3ada44816f8988f4f"
         )
     ]
 )
