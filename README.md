@@ -361,8 +361,10 @@ let croppedImage = ImageScannerStandaloneController.cropImage(using: quad, from:
 ### 🔁 Step 1: Prevalidate
 
 In you app start, initialize the model downloader with attribute wifiOnly which can be true or false. If true the model will be downloaded only if wifi is available. This checks the current version and downloads a new model if needed:
+Also please setEnvironment to either `prod` or `staging` depending on your needs.
 
 ```swift
+ModelDownloader.shared.setEnvironment(.production)
 ModelDownloader.shared.prevalidationInit(wifiOnly: true) { status in
     DispatchQueue.main.async {
         switch status {
@@ -378,16 +380,30 @@ ModelDownloader.shared.prevalidationInit(wifiOnly: true) { status in
 ```
 
 ### 🔁 Step 2: Check Model Status
-To check the model status, use the following method:
+To get results from the model status, use the following method:
 
 ```swift
 let validator = ReceiptValidation()
-validator.runOCRAndNER(from: images) { result in
+validator.validateReceipt(from: [images]) { result in
     print("🧾 OCR Text:\n\(result.recognizedText)")
     print("Retailer found: \(result.retailerFound)")
     print("Date found: \(result.dateFound)")
     print("Time found: \(result.timeFound)")
     print("Total found: \(result.receiptTotalFound)")
+}
+```
+
+Before using the model, you can check if the model is available or not.
+```swift
+let status = ModelDownloader.shared.getPrevalidationStatus()
+
+switch status {
+case .available:
+    print("✅ Model is available and ready to use")
+case .availableUpdating:
+    print("⏳ Model is downloading or updating")
+case .notAvailable:
+    print("❌ Model is not available")
 }
 ```
 
