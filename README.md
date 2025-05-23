@@ -380,19 +380,6 @@ ModelDownloader.shared.prevalidationInit(wifiOnly: true) { status in
 ```
 
 ### 🔁 Step 2: Check Model Status
-To get results from the model status, use the following method:
-
-```swift
-let validator = ReceiptValidation()
-validator.validateReceipt(from: [images]) { result in
-    print("🧾 OCR Text:\n\(result.recognizedText)")
-    print("Retailer found: \(result.retailerFound)")
-    print("Date found: \(result.dateFound)")
-    print("Time found: \(result.timeFound)")
-    print("Total found: \(result.receiptTotalFound)")
-}
-```
-
 Before using the model, you can check if the model is available or not.
 ```swift
 let status = ModelDownloader.shared.getPrevalidationStatus()
@@ -404,6 +391,20 @@ case .availableUpdating:
     print("⏳ Model is downloading or updating")
 case .notAvailable:
     print("❌ Model is not available")
+}
+```
+
+### 🔁 Step 3: Get Model Data
+To get results from the model status, use the following method:
+
+```swift
+let validator = ReceiptValidation()
+validator.validateReceipt(from: [images]) { result in
+    print("🧾 OCR Text:\n\(result.recognizedText)")
+    print("Retailer found: \(result.retailerFound)")
+    print("Date found: \(result.dateFound)")
+    print("Time found: \(result.timeFound)")
+    print("Total found: \(result.receiptTotalFound)")
 }
 ```
 
