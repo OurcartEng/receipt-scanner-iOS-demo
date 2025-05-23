@@ -356,11 +356,11 @@ let croppedImage = ImageScannerStandaloneController.cropImage(using: quad, from:
      // Handle croppedImage
 }
 ```
-### 🔄 Model Prevalidation
+### 🟢 Validation of receipts
 
-### 🔁 Step 1: Prevalidate
+### 🔁 Step 1: Prevalidation module initialization
 
-In you app start, initialize the model downloader with attribute wifiOnly which can be true or false. If true the model will be downloaded only if wifi is available. This checks the current version and downloads a new model if needed:
+In you app start, initialize the model downloader with attribute wifiOnly which can be true or false. If true the model will be downloaded only if wifi is available. This checks the current version and downloads a new model if needed.
 Also please setEnvironment to either `prod` or `staging` depending on your needs.
 
 ```swift
@@ -380,7 +380,7 @@ ModelDownloader.shared.prevalidationInit(wifiOnly: true) { status in
 ```
 
 ### 🔁 Step 2: Check Model Status
-Before using the model, you can check if the model is available or not.
+Before using the model, you can check if the model is available or not. If the model is "available" or "availableUpdating" you can run the prevalidation function.
 ```swift
 let status = ModelDownloader.shared.getPrevalidationStatus()
 
