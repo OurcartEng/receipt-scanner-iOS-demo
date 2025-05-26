@@ -399,8 +399,18 @@ To get results from the model status, use the following method:
 
 ```swift
 let validator = ReceiptValidation()
+
+// images up to 6
 validator.validateReceipt(from: [images]) { result in
     print("🧾 OCR Text:\n\(result.recognizedText)")
+    print("Retailer found: \(result.retailerFound)")
+    print("Date found: \(result.dateFound)")
+    print("Time found: \(result.timeFound)")
+    print("Total found: \(result.receiptTotalFound)")
+}
+
+// single pdf
+validator.validatePDF(from: pdf) { result in
     print("Retailer found: \(result.retailerFound)")
     print("Date found: \(result.dateFound)")
     print("Time found: \(result.timeFound)")
