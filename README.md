@@ -23,11 +23,12 @@ Clip showing the capabilities of the camera component:
 
 https://github.com/user-attachments/assets/9b4b5e45-5c6c-4159-951f-d4666406cb4c
 
-
-
 ## Installation
   ### Swift Package Manager:
 - #### Add the following URL: https://github.com/OurcartEng/receipt-scanner-iOS-demo .
+
+ ### Supported iOS versions
+- #### The minimal supported version of iOS is 15.
 
 ## Quickstart
 
