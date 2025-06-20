@@ -114,6 +114,8 @@ Additional methods to customize scanner behavior:
 - **`setCornerFrameSwitchColor(_ color: UIColor)`** – Sets the color of the corner frame.
 - **`setRectangleDetectorColor(_ color: UIColor)`** – Sets the color of the rectangle detector.
 - **`setSwitchToManualModeTimer(_ time: TimeInterval)`** – Sets the time in seconds before switching to manual mode.
+- **`setLongReceiptDetectionEnabled(_ enabled: Bool)`** – Enables or disables long receipt detection. 
+- **`setLongReceiptDetectionRatio(_ ratio: CGFloat)`** – Sets the ratio for long receipt detection. Default is 6.0. 
 
 #### 🎨 UI Customization
 
@@ -445,6 +447,9 @@ OURCART_looking_for_receipts: "Looking for receipt"
 OURCART_next: "Next"
 OURCART_AUTO_MANUAL_ON: "No receipt found. Capture manually."
 OURCART_receipt_out_of_rame: "Please position the receipt within the frame."
+OURCART_LONG_RECEIPT_ACTIVE: "Switch to long receipt mode"
+OURCART_BAD_LIGHTING: "Lighting is too low. Please move to a brighter area or turn on more lights."
+OURCART_SHAKE_DETECTED: "Camera shake detected. Please try to hold your device steadier or use support to stabilize your camera"
 ```
 In case you want to have bold words inside paragraph, do it like this: 
 ```xml
