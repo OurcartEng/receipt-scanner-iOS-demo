@@ -440,8 +440,8 @@ The SDK uses a built-in Localizable.strings file with keys as below.To override 
 ```xml
 OURCART_adjust_angle: "The angle is incorrect. Hold your camera directly above the receipt."
 OURCART_long_receipt: "Long Receipt"
-OURCART_regular_receipt: "Regular Receipt"
-OURCART_regular_receipt_txt2: "Regular Receipt"
+OURCART_regular_receipt: "Regular Receipt automatic scan"
+OURCART_regular_receipt_txt2: "Regular Receipt manual scan"
 OURCART_HOLD_STEADY: "Hold your camera, we are capturing"
 OURCART_looking_for_receipts: "Looking for receipt"
 OURCART_next: "Next"
