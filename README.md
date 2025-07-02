@@ -370,7 +370,7 @@ In you app start, initialize the model downloader with attribute wifiOnly which 
 Also please setEnvironment to either `prod` or `staging` depending on your needs.
 
 ```swift
-ModelDownloader.shared.setEnvironment(.production)
+ModelDownloader.shared.setEnvironment(.production, apiKey: "YOUR_API_KEY")
 ModelDownloader.shared.prevalidationInit(wifiOnly: true) { status in
     DispatchQueue.main.async {
         switch status {
