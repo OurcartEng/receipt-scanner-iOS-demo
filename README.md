@@ -237,8 +237,8 @@ Implement these methods in your `UIViewController`:
 
 ### 🚀 Upload Methods
 
-- **Upload a Single Image**  
-  ✅ This method uploads a single receipt image to the backend.
+- **Upload a Single Image**
+  ✅ This method uploads a single receipt image to the backend. The `campaignIDs` parameter is optional.
   ```swift
               do {
                   let config = try ReceiptScannerUploaderConfiguration(
@@ -248,10 +248,10 @@ Implement these methods in your `UIViewController`:
                       clientCountry: "YOUR_CLIENT_COUNTRY_CODE",
                       isProd: false // Set to true for production environment
                   )
-      
+
                   ReceiptScannerUploader.configuration = config
-      
-                  ReceiptScannerUploader.sendImage(image, with: config) { result in
+
+                  ReceiptScannerUploader.sendImage(image, with: config, campaignIDs: ["YOUR_CAMPAIGN_ID"]) { result in
                       switch result {
                       case .success(let url):
                           print("✅ Image uploaded successfully: \(url)")
@@ -259,12 +259,12 @@ Implement these methods in your `UIViewController`:
                           self.imagePreviewView.showError(message: "Upload of image failed: \(error.localizedDescription)")
                       }
                   }
-        
+
                 } catch {
                     print("Configuration error: \(error.localizedDescription)")
                 }
-- **Upload Multiple Images**  
-  ✅ This method uploads multiple receipt images to the backend.
+- **Upload Multiple Images**
+  ✅ This method uploads multiple receipt images to the backend. The `campaignIDs` parameter is optional.
   ```swift
               do {
                   let config = try ReceiptScannerUploaderConfiguration(
@@ -274,10 +274,10 @@ Implement these methods in your `UIViewController`:
                       clientCountry: "YOUR_CLIENT_COUNTRY_CODE",
                       isProd: false // Set to true for production environment
                   )
-      
+
                   ReceiptScannerUploader.configuration = config
-      
-                  ReceiptScannerUploader.sendMultipleImages(images, with: config) { result in
+
+                  ReceiptScannerUploader.sendMultipleImages(images, with: config, campaignIDs: ["YOUR_CAMPAIGN_ID"]) { result in
                       switch result {
                       case .success(let urls):
                           print("✅ Images uploaded successfully: \(urls)")
@@ -285,12 +285,12 @@ Implement these methods in your `UIViewController`:
                           self.imagePreviewView.showError(message: "Upload of images failed: \(error.localizedDescription)")
                       }
                   }
-        
+
                 } catch {
                     print("Configuration error: \(error.localizedDescription)")
                 }
-- **Upload a PDF Receipt**  
-  ✅ This method uploads a PDF receipt to the backend.
+- **Upload a PDF Receipt**
+  ✅ This method uploads a PDF receipt to the backend. The `campaignIDs` parameter is optional.
   ```swift
               do {
                   let config = try ReceiptScannerUploaderConfiguration(
@@ -300,10 +300,10 @@ Implement these methods in your `UIViewController`:
                       clientCountry: "YOUR_CLIENT_COUNTRY_CODE",
                       isProd: false // Set to true for production environment
                   )
-      
+
                   ReceiptScannerUploader.configuration = config
-      
-                  ReceiptScannerUploader.sendPDF(pdf, with: config) { result in
+
+                  ReceiptScannerUploader.sendPDF(pdf, with: config, campaignIDs: ["YOUR_CAMPAIGN_ID"]) { result in
                       switch result {
                       case .success(let urls):
                           print("✅ PDF uploaded successfully: \(urls)")
@@ -311,7 +311,7 @@ Implement these methods in your `UIViewController`:
                           self.imagePreviewView.showError(message: "Upload of pdf failed: \(error.localizedDescription)")
                       }
                   }
-        
+
                 } catch {
                     print("Configuration error: \(error.localizedDescription)")
                 }
@@ -456,3 +456,15 @@ In case you want to have bold words inside paragraph, do it like this:
 "OURCART_final_screen_manual_review_sub_heading": "We couldn't process your receipt automatically.It will now go to <b>manual review</b>, which may take<b> up to 48 hours.</b>"
 ```
 Explanation: the text OURCART_regular_receipt_txt2 is applied when switched to manual mode
+
+---
+
+## 📋 Release Notes
+
+| Version | Changes |
+|---------|---------|
+| **1.14.0** | [Prevalidation of duplicates and old receipts](#-validation-of-receipts), [Campaign IDs support](#-upload-methods) |
+| **1.13.1** | Bug fixes |
+| **1.13.0** | Long receipt detection |
+| **1.12.0** | Edge detection & cropping |
+| **1.11.0** | Initial public release |
