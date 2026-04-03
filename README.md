@@ -413,6 +413,8 @@ validator.validateReceipt(from: [images]) { result in
     print("Date found: \(result.dateFound)")
     print("Time found: \(result.timeFound)")
     print("Total found: \(result.receiptTotalFound)")
+    print("Duplicate found: \(result.isDuplicate)")
+    print("Old Receipt found: \(result.oldReceipt)")
 }
 
 // single pdf
@@ -421,6 +423,8 @@ validator.validatePDF(from: pdf) { result in
     print("Date found: \(result.dateFound)")
     print("Time found: \(result.timeFound)")
     print("Total found: \(result.receiptTotalFound)")
+    print("Duplicate found: \(result.isDuplicate)")
+    print("Old Receipt found: \(result.oldReceipt)")
 }
 ```
 
