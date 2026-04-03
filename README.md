@@ -456,3 +456,15 @@ In case you want to have bold words inside paragraph, do it like this:
 "OURCART_final_screen_manual_review_sub_heading": "We couldn't process your receipt automatically.It will now go to <b>manual review</b>, which may take<b> up to 48 hours.</b>"
 ```
 Explanation: the text OURCART_regular_receipt_txt2 is applied when switched to manual mode
+
+---
+
+## 📋 Release Notes
+
+| Version | Changes |
+|---------|---------|
+| **1.14.0** | [Prevalidation of duplicates and old receipts](#-validation-of-receipts), [Campaign IDs support](#-upload-methods) |
+| **1.13.1** | Bug fixes |
+| **1.13.0** | Long receipt detection |
+| **1.12.0** | Edge detection & cropping |
+| **1.11.0** | Initial public release |
